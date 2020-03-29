@@ -1,0 +1,90 @@
+.button-selection-sort{
+  background: #dcdcdc;
+}
+.Text-Align{
+  text-align: left;
+}
+.graph-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(20px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    width: 800px;
+    background: #f9f9f9;
+    height: 500px;
+    position: relative;
+  .per-att{
+      height: 100%;
+      background: steelblue;
+      margin: 0px 4px 0px 0px;
+      position: relative;
+      left: 0px;
+      transition: all 0.2s ease-in;
+    .height-minus{
+        background: #fff;
+        text-align: center;
+    }
+  }
+  
+  }
+
+  @keyframes pulse {
+    0% {
+      background-color: #BD3F32;
+    }
+    100% {
+      background-color: #BD3F32;
+    }
+  }
+  .graph-container-linear-search{
+    .per-att{
+      border: 1px solid black;
+      padding: 5px;
+      /* margin: 12px auto; */
+      display: inline-block;
+    }
+    .current-bar{
+      border: 1px solid crimson;
+    }
+  }
+  input{
+    border: 1px solid #888;
+  }
+  .element-found-at{
+    color: crimson;
+  }
+
+  .graph-container-binary-search{
+    .per-att{
+      border: 1px solid black;
+      padding: 5px;
+      /* margin: 12px auto; */
+      display: inline-block;
+    }
+    .low-index-number{
+      border: 1px solid blueviolet;;
+    }
+    .high-index-number{
+      border: 1px solid palevioletred;;
+    }
+    .high-index-number-found{
+      color:green;
+    }
+  }
+  .index-span{
+    display: inline-block;
+    padding: 2px 14px 0px 14px;
+  }
+  .low-index-number{
+    display: inline-block;
+    padding: 2px 14px 0px 14px;
+    color:blueviolet;
+  }
+  .high-index-number{
+    display: inline-block;
+    padding: 2px 14px 0px 14px;
+    color:palevioletred;
+  }
+  .high-index-number-found{
+    color:green;
+  }
