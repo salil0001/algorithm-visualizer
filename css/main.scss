@@ -1,25 +1,26 @@
 .button-selection-sort{
   background: #dcdcdc;
+    padding: 6px 10px 6px 10px;
 }
 .Text-Align{
   text-align: left;
+  padding: 8px 0px 8px 0px;
 }
 .graph-container {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (minmax(20px, 1fr))[auto-fill];
-        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-    width: 800px;
-    background: #f9f9f9;
-    height: 500px;
-    position: relative;
+  display: grid;
+  -ms-grid-columns: minmax(20px, 1fr) [auto-fill];
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+   width: 1000px; 
+
+  height: 500px;
+  position: relative;
   .per-att{
       height: 100%;
       background: steelblue;
       margin: 0px 4px 0px 0px;
       position: relative;
       left: 0px;
-      transition: all 0.2s ease-in;
+      transition: all 0.3s ease;
     .height-minus{
         background: #fff;
         text-align: center;
@@ -49,6 +50,9 @@
   }
   input{
     border: 1px solid #888;
+    width: 200px;
+    padding: 6px;
+    margin: 8px 0px 8px 0px;
   }
   .element-found-at{
     color: crimson;
