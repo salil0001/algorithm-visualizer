@@ -1,9 +1,11 @@
 .button-selection-sort {
   background: #dcdcdc;
+  padding: 6px 10px 6px 10px;
 }
 
 .Text-Align {
   text-align: left;
+  padding: 8px 0px 8px 0px;
 }
 
 .graph-container {
@@ -11,8 +13,7 @@
   display: grid;
   -ms-grid-columns: minmax(20px, 1fr) [auto-fill];
   grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-  width: 800px;
-  background: #f9f9f9;
+  width: 1000px;
   height: 500px;
   position: relative;
 }
@@ -23,8 +24,8 @@
   margin: 0px 4px 0px 0px;
   position: relative;
   left: 0px;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .graph-container .per-att .height-minus {
@@ -63,6 +64,9 @@
 
 input {
   border: 1px solid #888;
+  width: 200px;
+  padding: 6px;
+  margin: 8px 0px 8px 0px;
 }
 
 .element-found-at {
