@@ -1,11 +1,28 @@
 .button-selection-sort {
-  background: #dcdcdc;
+  background: #FF6969;
   padding: 6px 10px 6px 10px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.button-selection-sort:disabled {
+  background: #ff696961;
 }
 
 .Text-Align {
-  text-align: left;
-  padding: 8px 0px 8px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 12px 6px 8px 4px;
+  /* background: #f7f7f7; */
+  width: 1040px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .graph-container {
@@ -13,14 +30,17 @@
   display: grid;
   -ms-grid-columns: minmax(20px, 1fr) [auto-fill];
   grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-  width: 1000px;
+  width: 1040px;
   height: 500px;
+  background: #f7f7f7;
   position: relative;
+  border: 1px dashed #888;
+  margin: 0 auto;
 }
 
 .graph-container .per-att {
   height: 100%;
-  background: steelblue;
+  background: #FF6969;
   margin: 0px 4px 0px 0px;
   position: relative;
   left: 0px;
@@ -51,6 +71,11 @@
   }
 }
 
+.graph-container-linear-search {
+  margin: 0 auto;
+  width: 1024px;
+}
+
 .graph-container-linear-search .per-att {
   border: 1px solid black;
   padding: 5px;
@@ -73,22 +98,27 @@ input {
   color: crimson;
 }
 
-.graph-container-binary-search .per-att {
+.binary-search-wrapper {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.binary-search-wrapper .graph-container-binary-search .per-att {
   border: 1px solid black;
   padding: 5px;
   /* margin: 12px auto; */
   display: inline-block;
 }
 
-.graph-container-binary-search .low-index-number {
+.binary-search-wrapper .graph-container-binary-search .low-index-number {
   border: 1px solid blueviolet;
 }
 
-.graph-container-binary-search .high-index-number {
+.binary-search-wrapper .graph-container-binary-search .high-index-number {
   border: 1px solid palevioletred;
 }
 
-.graph-container-binary-search .high-index-number-found {
+.binary-search-wrapper .graph-container-binary-search .high-index-number-found {
   color: green;
 }
 
@@ -111,5 +141,14 @@ input {
 
 .high-index-number-found {
   color: green;
+}
+
+.text-style {
+  font-size: 22px;
+}
+
+.form-class {
+  width: 1024px;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=main.css.map */
