@@ -113,11 +113,11 @@
     var dd= document.getElementById("graph-container")
         
         var Child1= document.getElementById("graph-container").children[i];
-        Child1.style.background="#bd3f32";
+        Child1.style.background="#69D7FF";
         let min = i;
         for (let j = i + 1; j < list.length; j++) {
         var Child2= document.getElementById("graph-container").children[j];
-              Child2.style.background="#bd3f32";
+              Child2.style.background="#69D7FF";
             if (list[min] > list[j]) {
                 min = j;
             }
@@ -130,8 +130,8 @@
         }
         if (min !== i) {
         var TEMPdom= document.getElementById("graph-container").children[min];
-        TEMPdom.style.background="#dd3e54";
-        Child1.style.background="#dd3e54";
+        TEMPdom.style.background="#6d5d5d";
+        Child1.style.background="#6d5d5d";
         await new Promise((res)=>{
                   setTimeout( function() {
                     res("Success!")  
@@ -228,7 +228,7 @@
   
 
 
-function linearSearchForm(e){
+async function linearSearchForm(e){
   e.preventDefault();
   disableAllButtons();
   var lsi=document.getElementById("graph-container-linear-search")
@@ -243,7 +243,10 @@ function linearSearchForm(e){
   var Index=-1;
   document.getElementById("linear-search-found").innerHTML=Index;
   for(let k=0; k<list.length; k++){
-    setTimeout(function(){
+    await new Promise((res)=>{ setTimeout(function() {
+                    res("Success!")  
+                   },800) 
+                })
     if(k>0){
       lsi.children[k-1].className="per-att"
     }
@@ -252,7 +255,7 @@ function linearSearchForm(e){
       Index=k;
       document.getElementById("linear-search-found").innerHTML=Index;
     }
-    },k*1000);
+    
 
     if(list[k]===parseInt(document.getElementById("linear-val").value)){
       break;
@@ -287,8 +290,9 @@ function BinarySearchInit(){
     }
 }
 
-function BinarySearchForm(e){
+async function BinarySearchForm(e){
 e.preventDefault();
+disableAllButtons();
 let list=[100,130,150,160,200,210,220,230,300,350,400,470,490,500,510,550,590,600];
 
   var gg=document.getElementById("graph-container-binary-search");
@@ -306,10 +310,12 @@ let findIndex=-1;
 var highIndex = list.length - 1;
  var mx=0;
  var midIndex;
-  while (highIndex >= lowIndex && mx<6) {
-      setTimeout(function() {
+  while (highIndex >= lowIndex) {
          midIndex = Math.floor((lowIndex + highIndex) / 2);
-
+         await new Promise((res)=>{ setTimeout(function() {
+                    res("Success!")  
+                   },800) 
+                })
      if (list[midIndex] == parseInt(document.getElementById("binary-val").value)) {
         findIndex=midIndex
       document.getElementById("graph-container-binary-search").children[findIndex].className="per-att high-index-number-found";
@@ -332,7 +338,7 @@ var highIndex = list.length - 1;
     }
     document.getElementById("low-index-number").innerHTML=lowIndex
     document.getElementById("high-index-number").innerHTML=highIndex
-    },1000*mx++)
+  
   }
   disableAllButtons()
 }
@@ -409,9 +415,9 @@ async function bubbleSortAlgo (){
    for (let i = 0; i < list.length; i++) {
       for (let j = 0; j < list.length-1; j++) {
            var ff= document.getElementById("graph-container-bubble-sort").children[j];
-                ff.style.background="#bd3f32";
+                ff.style.background="#69D7FF";
             var gg= document.getElementById("graph-container-bubble-sort").children[j+1];
-              gg.style.background="#bd3f32";
+              gg.style.background="#69D7FF";
              var dd= document.getElementById("graph-container-bubble-sort");
              await new Promise((res)=>{
                   setTimeout( function() {
@@ -446,10 +452,10 @@ async function bubbleSortAlgo (){
             }
            
             
-           ff.style.background="steelblue";
+           ff.style.background="#FF6969";
            ff.style.left=`${0}px`
            ff.style.zindex=0
-           gg.style.background="steelblue";
+           gg.style.background="#FF6969";
            gg.style.left=`${0}px`
            gg.style.zindex=0
           
@@ -459,13 +465,14 @@ async function bubbleSortAlgo (){
     disableAllButtons()
 }
 </script>
-<body onload="foo(),linearSearchInit(),BinarySearchInit(),BubbleSortInit()" style="
-background: #f9eded;">
+<body onload="foo(),linearSearchInit(),BinarySearchInit(),BubbleSortInit()">
     <div class="Text-Align">
-      <h2>Selection Sort O(n<sup>2</sup>)</h2>
+      <div><span class="text-style"><b>Selection Sort O(n<sup>2</sup>)</b></span></div>
+      <div>
         <button class="button-selection-sort" onclick="SelectionSortAlgo()">Selection Sort</button> 
         <button class="button-selection-sort"  onclick="createRandomArray()">Random Array</button>
         <button class="button-selection-sort"  onclick="createRandomSet()">Selection Sort Data Size</button>
+      </div>
    </div>
     
 
@@ -473,31 +480,36 @@ background: #f9eded;">
     </div>
     
     <div class="Text-Align">
-      <h2>Bubble Sort O(n<sup>2</sup>)</h2>
-      <button onclick="bubbleSortAlgo()" class="button-selection-sort">Bubble Sort</button>
-      <button onclick="randonArrayBubbleSize()" class="button-selection-sort">Random Array Bubble</button>
-      <button onclick="randomArrayBubble()" class="button-selection-sort" >Bubble Sort Data Size</button>
+      <div><span class="text-style"><b>Bubble Sort O(n<sup>2</sup>)</b></span></div>
+      <div>
+        <button onclick="bubbleSortAlgo()" class="button-selection-sort">Bubble Sort</button>
+        <button onclick="randonArrayBubbleSize()" class="button-selection-sort">Random Array Bubble</button>
+        <button onclick="randomArrayBubble()" class="button-selection-sort" >Bubble Sort Data Size</button>
+      </div>
     </div>
 
     <div id="graph-container-bubble-sort" class="graph-container">    
     </div>
-<div>
-  <h2>Linear Search (Unsorted Elements)</h2>
-</div>
-    <div class="Text-Align">
+
+
+   <div class="Text-Align">
+    <div><span class="text-style"><b>Linear Search (Unsorted Elements)</b></span></div>
+    <div>
       <button class="button-selection-sort" onclick="makeRandomArray()">Random Array</button>    
       <button class="button-selection-sort" onclick="makeRandomArrayDatasetLinear()">Make Random DataSet</button>    
     </div>
+   </div>
     <div id="graph-container-linear-search" class="graph-container-linear-search">    
     </div>
-    <form onsubmit="linearSearchForm(event)" method="post">
+    <form class="form-class" onsubmit="linearSearchForm(event)" method="post">
       <input type="number" id= "linear-val" placeholder="Enter a number and then press enter" required/>
-    </form>
       <div>
         Number found at <span id="linear-search-found" class="element-found-at">X</span> position
       </div>
+    </form>
+    
 
-      <div>
+      <div class="binary-search-wrapper">
         <h2>Binary Search (Sorted Elements)</h2>  
         <div id="graph-container-binary-search" class="graph-container-binary-search">    
         </div>
@@ -508,7 +520,7 @@ background: #f9eded;">
           <input type="number" id= "binary-val" placeholder="Enter a number and then press enter" required/>
         </form>
       </div>
-      <div><h3>Salil Sharma</h3></div>
-      <div>if any bugs or amendments required please contact <b>salil0001@hotmail.com</b></div>
+      
+
 </body>
-</html> ß
+</html> 
