@@ -110,10 +110,10 @@
        }
   
    for (let i = 0; i < list.length; i++) {
-    var dd= document.getElementById("graph-container")
+    var domParent= document.getElementById("graph-container")
         
-        var Child1= document.getElementById("graph-container").children[i];
-        Child1.style.background="#69D7FF";
+        var child1= document.getElementById("graph-container").children[i];
+        child1.style.background="#69D7FF";
         let min = i;
         for (let j = i + 1; j < list.length; j++) {
         var Child2= document.getElementById("graph-container").children[j];
@@ -129,9 +129,9 @@
                 Child2.style.background=null;
         }
         if (min !== i) {
-        var TEMPdom= document.getElementById("graph-container").children[min];
-        TEMPdom.style.background="#6d5d5d";
-        Child1.style.background="#6d5d5d";
+        var tempDom= document.getElementById("graph-container").children[min];
+        tempDom.style.background="#6d5d5d";
+        child1.style.background="#6d5d5d";
         await new Promise((res)=>{
                   setTimeout( function() {
                     res("Success!")  
@@ -156,9 +156,9 @@
                    },500) 
                 })
           document.getElementById("graph-container").children[min].style.background=null;
-                var temp=dd.children[i];
-                dd.replaceChild(dd.children[min],dd.children[i]);
-                dd.insertBefore(temp,dd.children[min]);
+                var temp=domParent.children[i];
+                domParent.replaceChild(domParent.children[min],domParent.children[i]);
+                domParent.insertBefore(temp,domParent.children[min]);
            
          document.getElementById("graph-container").children[i].style.left=null    
          document.getElementById("graph-container").children[min].style.left=null    
@@ -180,7 +180,7 @@
                     res("Success!")  
                    },350) 
                 })
-       Child1.style.background=null;
+       child1.style.background=null;
    }
    disableAllButtons()
   }
@@ -266,27 +266,27 @@ async function linearSearchForm(e){
 function makeRandomArrayDatasetLinear(){
   let RandomSet= Math.floor(Math.random() * 19) + 1;
    list=[] 
-   var gg = document.getElementById("graph-container-linear-search");
-   gg.innerHTML="";
+   var domContainer = document.getElementById("graph-container-linear-search");
+   domContainer.innerHTML="";
    for(let i=0; i<RandomSet; i++)
    {
     var parentDiv= document.createElement('SPAN');
         list[i]=Math.floor(Math.random() * 480) + 1;
           parentDiv.className="per-att";
           parentDiv.innerHTML=list[i]
-          gg.appendChild(parentDiv)  
+          domContainer.appendChild(parentDiv)  
    }
 }
 
 function BinarySearchInit(){
   let list=[100,130,150,160,200,210,220,230,300,350,400,470,490,500,510,550,590,600];
-  var gg=document.getElementById("graph-container-binary-search");
+  var domContainer=document.getElementById("graph-container-binary-search");
 
   for(let i=0; i<list.length; i++){
       var parentDiv= document.createElement('SPAN');
           parentDiv.className="per-att";
           parentDiv.innerHTML=list[i]
-      gg.appendChild(parentDiv)
+      domContainer.appendChild(parentDiv)
     }
 }
 
@@ -295,13 +295,13 @@ e.preventDefault();
 disableAllButtons();
 let list=[100,130,150,160,200,210,220,230,300,350,400,470,490,500,510,550,590,600];
 
-  var gg=document.getElementById("graph-container-binary-search");
-  gg.innerHTML=""
+  var domContainer=document.getElementById("graph-container-binary-search");
+  domContainer.innerHTML=""
   for(let i=0; i<list.length; i++){
       var parentDiv= document.createElement('SPAN');
           parentDiv.className="per-att";
           parentDiv.innerHTML=list[i]
-      gg.appendChild(parentDiv)
+      domContainer.appendChild(parentDiv)
     }
 
 
@@ -410,15 +410,15 @@ async function bubbleSortAlgo (){
      
        }
 
-   var dd= document.getElementById("graph-container-bubble-sort");
+   var domParent= document.getElementById("graph-container-bubble-sort");
   
    for (let i = 0; i < list.length; i++) {
       for (let j = 0; j < list.length-1; j++) {
            var ff= document.getElementById("graph-container-bubble-sort").children[j];
                 ff.style.background="#69D7FF";
-            var gg= document.getElementById("graph-container-bubble-sort").children[j+1];
-              gg.style.background="#69D7FF";
-             var dd= document.getElementById("graph-container-bubble-sort");
+            var domContainer= document.getElementById("graph-container-bubble-sort").children[j+1];
+              domContainer.style.background="#69D7FF";
+             var domParent= document.getElementById("graph-container-bubble-sort");
              await new Promise((res)=>{
                   setTimeout( function() {
                     res("Success!")  
@@ -426,14 +426,14 @@ async function bubbleSortAlgo (){
                 })
             if (list[j] > list[j + 1]) {
               ff.style.background="#dd3e54"; 
-              gg.style.background="#dd3e54"
+              domContainer.style.background="#dd3e54"
               await new Promise((res)=>{
                   setTimeout( function() {
                     res("Success!")  
                    },500) 
                 })
-              gg.style.left=`${-40}px`
-              gg.style.zindex=1
+              domContainer.style.left=`${-40}px`
+              domContainer.style.zindex=1
               ff.style.left=`${40}px`
               ff.style.zindex=1
               await new Promise((res)=>{
@@ -444,9 +444,9 @@ async function bubbleSortAlgo (){
                 let tmp = list[j];
                 list[j] = list[j + 1];
                 list[j + 1] = tmp;
-                var temp=dd.children[j];
-                dd.replaceChild(dd.children[j+1],dd.children[j]);
-                dd.insertBefore(temp,dd.children[j+1]);
+                var temp=domParent.children[j];
+                domParent.replaceChild(domParent.children[j+1],domParent.children[j]);
+                domParent.insertBefore(temp,domParent.children[j+1]);
                 
                
             }
@@ -455,9 +455,9 @@ async function bubbleSortAlgo (){
            ff.style.background="#FF6969";
            ff.style.left=`${0}px`
            ff.style.zindex=0
-           gg.style.background="#FF6969";
-           gg.style.left=`${0}px`
-           gg.style.zindex=0
+           domContainer.style.background="#FF6969";
+           domContainer.style.left=`${0}px`
+           domContainer.style.zindex=0
           
         
         } 
