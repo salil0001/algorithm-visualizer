@@ -1,5 +1,8 @@
-# pesto-capstone-project
-this project is in vanilla DOM 
-No third party CSS library used
+# Algorithm-Visualizer.
+This project is in vanilla JS, HTML/CSS.
 
-Any Questiones or Queries: salil0001@hotmail.com
+No third party CSS library used.
+
+Any Questiones or Feedback: salil0001@hotmail.com
+
+This Project has been hosted on [https://pesto-capstone-salil.netlify.app/](https://pesto-capstone-salil.netlify.app/)
